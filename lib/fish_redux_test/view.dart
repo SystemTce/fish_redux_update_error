@@ -20,20 +20,6 @@ Widget buildView(
               ],
             ),
           ),
-          Container(
-            margin:EdgeInsets.zero,
-            height: 35,
-            color: Colors.blue,
-            child:    FlatButton(onPressed: (){
-              dispatch(InventoryDetailActionCreator.onSave());
-            }, child: Text(
-              '保存',
-              style: const TextStyle(
-                fontSize: 18,
-                color: Colors.white,
-              ),
-            ),),
-          ),
           Expanded(child:  ListView.builder(
             controller: state.scrollController,
             itemBuilder: adapter.itemBuilder,

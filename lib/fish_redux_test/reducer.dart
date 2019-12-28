@@ -7,22 +7,11 @@ import 'state.dart';
 Reducer<InventoryDetailState> buildReducer() {
   return asReducer(
     <Object, Reducer<InventoryDetailState>>{
-      InventoryDetailAction.clearView: clearView,
       InventoryDetailAction.showDetails: showDetails,
     },
   );
 }
 
-InventoryDetailState clearView(InventoryDetailState state, Action action) {
-  final InventoryDetailState newState = state.clone();
-  newState
-    ..list = <DetailItemState>[]
-    ..totalState.checkQty = '0'
-    ..totalState.diffQty = '0'
-    // 清空批号过滤
-    ;
-  return newState;
-}
 
 InventoryDetailState showDetails(InventoryDetailState state, Action action) {
   // 更新list
